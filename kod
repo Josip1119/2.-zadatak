@@ -1,0 +1,33 @@
+import {useEffect, useState} from "react";
+
+function App() {
+  const [counter, setCounter] = useState(0);
+  const [caluclation, setCalcualtion] = useState(0);
+
+const resetCounter = () => {
+  setCounter (counter * 0)
+};
+
+
+const increaseCounter = () => {
+    setCounter (counter + 1);
+};
+
+  useEffect (() => {
+      setCalcualtion (() => counter * 10 );
+    }, [counter]);
+  
+
+  return (
+    <>
+     <h1>Timer counter : {counter}</h1>
+     <button onClick={increaseCounter}> + </button>
+     <p>caluclation : {caluclation}</p>
+     <button onClick={resetCounter}> reset </button> 
+     </>
+  );
+  }
+  
+
+
+export default App;
